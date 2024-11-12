@@ -86,7 +86,6 @@ final class CatinderTests: XCTestCase {
         wait(for: [expectation], timeout: 5)
     }
 
-    
     func testCatImageFetch() {
         let expectation = XCTestExpectation(description: "Fetch cat image")
         

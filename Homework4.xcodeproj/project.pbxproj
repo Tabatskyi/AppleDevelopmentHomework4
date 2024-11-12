@@ -15,13 +15,13 @@
 		CEBCD7D72CE35CE80051C817 /* Homework4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD7D62CE35CE80051C817 /* Homework4Tests.swift */; };
 		CEBCD7E22CE35CE80051C817 /* Homework4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD7E12CE35CE80051C817 /* Homework4UITests.swift */; };
 		CEBCD7F72CE35E3A0051C817 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEBCD7F62CE35E3A0051C817 /* SnapKit */; };
-		CEBCD8042CE35EE30051C817 /* swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = CEBCD8032CE35EE30051C817 /* swiftlint.yml */; };
 		CEBCD80C2CE35F750051C817 /* CatAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8092CE35F750051C817 /* CatAPIService.swift */; };
 		CEBCD80D2CE35F750051C817 /* CatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD80A2CE35F750051C817 /* CatModels.swift */; };
 		CEBCD8172CE3661A0051C817 /* Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8142CE366190051C817 /* Students.swift */; };
 		CEBCD8182CE3661A0051C817 /* StudentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8152CE366190051C817 /* StudentDetails.swift */; };
 		CEBCD8192CE3661A0051C817 /* CustomTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8162CE3661A0051C817 /* CustomTable.swift */; };
 		CEBCD81E2CE366B00051C817 /* CatinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD81D2CE366B00051C817 /* CatinderTests.swift */; };
+		CEBCD8262CE36C350051C817 /* CatLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8252CE36C350051C817 /* CatLoading.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -69,13 +69,13 @@
 		CEBCD7DD2CE35CE80051C817 /* Homework4UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Homework4UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEBCD7E12CE35CE80051C817 /* Homework4UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework4UITests.swift; sourceTree = "<group>"; };
 		CEBCD7E32CE35CE80051C817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEBCD8032CE35EE30051C817 /* swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftlint.yml; sourceTree = "<group>"; };
 		CEBCD8092CE35F750051C817 /* CatAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatAPIService.swift; sourceTree = "<group>"; };
 		CEBCD80A2CE35F750051C817 /* CatModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatModels.swift; sourceTree = "<group>"; };
 		CEBCD8142CE366190051C817 /* Students.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Students.swift; sourceTree = "<group>"; };
 		CEBCD8152CE366190051C817 /* StudentDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentDetails.swift; sourceTree = "<group>"; };
 		CEBCD8162CE3661A0051C817 /* CustomTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTable.swift; sourceTree = "<group>"; };
 		CEBCD81D2CE366B00051C817 /* CatinderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatinderTests.swift; sourceTree = "<group>"; };
+		CEBCD8252CE36C350051C817 /* CatLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatLoading.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +107,6 @@
 		CEBCD7B32CE35CE40051C817 = {
 			isa = PBXGroup;
 			children = (
-				CEBCD8032CE35EE30051C817 /* swiftlint.yml */,
 				CEBCD7BE2CE35CE50051C817 /* Homework4 */,
 				CEBCD7D52CE35CE80051C817 /* Homework4Tests */,
 				CEBCD7E02CE35CE80051C817 /* Homework4UITests */,
@@ -139,6 +138,7 @@
 				CEBCD7CD2CE35CE70051C817 /* Info.plist */,
 				CEBCD8092CE35F750051C817 /* CatAPIService.swift */,
 				CEBCD80A2CE35F750051C817 /* CatModels.swift */,
+				CEBCD8252CE36C350051C817 /* CatLoading.swift */,
 			);
 			path = Homework4;
 			sourceTree = "<group>";
@@ -274,7 +274,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEBCD7CC2CE35CE70051C817 /* LaunchScreen.storyboard in Resources */,
-				CEBCD8042CE35EE30051C817 /* swiftlint.yml in Resources */,
 				CEBCD7C92CE35CE70051C817 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +304,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/swiftlint.yml",
 			);
 			outputFileListPaths = (
 			);
@@ -328,6 +328,7 @@
 				CEBCD80C2CE35F750051C817 /* CatAPIService.swift in Sources */,
 				CEBCD8172CE3661A0051C817 /* Students.swift in Sources */,
 				CEBCD7C02CE35CE50051C817 /* AppDelegate.swift in Sources */,
+				CEBCD8262CE36C350051C817 /* CatLoading.swift in Sources */,
 				CEBCD7C22CE35CE50051C817 /* SceneDelegate.swift in Sources */,
 				CEBCD8192CE3661A0051C817 /* CustomTable.swift in Sources */,
 			);

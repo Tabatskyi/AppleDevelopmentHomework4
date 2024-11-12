@@ -1,10 +1,3 @@
-//
-//  Homework4UITests.swift
-//  Homework4UITests
-//
-//  Created by kerbi on 12.11.2024.
-//
-
 import XCTest
 
 class Homework4UITests: XCTestCase {
@@ -15,7 +8,6 @@ class Homework4UITests: XCTestCase {
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
 
     override func tearDownWithError() throws {
