@@ -17,12 +17,11 @@
 		CEBCD7F72CE35E3A0051C817 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEBCD7F62CE35E3A0051C817 /* SnapKit */; };
 		CEBCD80C2CE35F750051C817 /* CatAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8092CE35F750051C817 /* CatAPIService.swift */; };
 		CEBCD80D2CE35F750051C817 /* CatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD80A2CE35F750051C817 /* CatModels.swift */; };
-		CEBCD8172CE3661A0051C817 /* Students.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8142CE366190051C817 /* Students.swift */; };
-		CEBCD8182CE3661A0051C817 /* StudentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8152CE366190051C817 /* StudentDetails.swift */; };
 		CEBCD8192CE3661A0051C817 /* CustomTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8162CE3661A0051C817 /* CustomTable.swift */; };
 		CEBCD81E2CE366B00051C817 /* CatinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD81D2CE366B00051C817 /* CatinderTests.swift */; };
 		CEBCD8262CE36C350051C817 /* CatLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8252CE36C350051C817 /* CatLoading.swift */; };
 		CEBCD83C2CE4C47E0051C817 /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD83B2CE4C47E0051C817 /* CatViewModel.swift */; };
+		CEBCD8572CE4F89B0051C817 /* BreedsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8562CE4F89B0051C817 /* BreedsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -72,12 +71,11 @@
 		CEBCD7E32CE35CE80051C817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEBCD8092CE35F750051C817 /* CatAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatAPIService.swift; sourceTree = "<group>"; };
 		CEBCD80A2CE35F750051C817 /* CatModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatModels.swift; sourceTree = "<group>"; };
-		CEBCD8142CE366190051C817 /* Students.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Students.swift; sourceTree = "<group>"; };
-		CEBCD8152CE366190051C817 /* StudentDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentDetails.swift; sourceTree = "<group>"; };
 		CEBCD8162CE3661A0051C817 /* CustomTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTable.swift; sourceTree = "<group>"; };
 		CEBCD81D2CE366B00051C817 /* CatinderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatinderTests.swift; sourceTree = "<group>"; };
 		CEBCD8252CE36C350051C817 /* CatLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatLoading.swift; sourceTree = "<group>"; };
 		CEBCD83B2CE4C47E0051C817 /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
+		CEBCD8562CE4F89B0051C817 /* BreedsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +129,6 @@
 			children = (
 				CEBCD7BF2CE35CE50051C817 /* AppDelegate.swift */,
 				CEBCD8162CE3661A0051C817 /* CustomTable.swift */,
-				CEBCD8152CE366190051C817 /* StudentDetails.swift */,
-				CEBCD8142CE366190051C817 /* Students.swift */,
 				CEBCD7C12CE35CE50051C817 /* SceneDelegate.swift */,
 				CEBCD7C32CE35CE50051C817 /* ViewController.swift */,
 				CEBCD7C82CE35CE70051C817 /* Assets.xcassets */,
@@ -142,6 +138,7 @@
 				CEBCD80A2CE35F750051C817 /* CatModels.swift */,
 				CEBCD8252CE36C350051C817 /* CatLoading.swift */,
 				CEBCD83B2CE4C47E0051C817 /* CatViewModel.swift */,
+				CEBCD8562CE4F89B0051C817 /* BreedsViewModel.swift */,
 			);
 			path = Homework4;
 			sourceTree = "<group>";
@@ -326,15 +323,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEBCD80D2CE35F750051C817 /* CatModels.swift in Sources */,
-				CEBCD8182CE3661A0051C817 /* StudentDetails.swift in Sources */,
 				CEBCD7C42CE35CE50051C817 /* ViewController.swift in Sources */,
 				CEBCD83C2CE4C47E0051C817 /* CatViewModel.swift in Sources */,
 				CEBCD80C2CE35F750051C817 /* CatAPIService.swift in Sources */,
-				CEBCD8172CE3661A0051C817 /* Students.swift in Sources */,
 				CEBCD7C02CE35CE50051C817 /* AppDelegate.swift in Sources */,
 				CEBCD8262CE36C350051C817 /* CatLoading.swift in Sources */,
 				CEBCD7C22CE35CE50051C817 /* SceneDelegate.swift in Sources */,
 				CEBCD8192CE3661A0051C817 /* CustomTable.swift in Sources */,
+				CEBCD8572CE4F89B0051C817 /* BreedsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

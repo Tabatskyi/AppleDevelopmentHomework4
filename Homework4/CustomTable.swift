@@ -1,101 +1,85 @@
 import UIKit
+import Combine
 
 // https://www.waldo.com/blog/how-to-use-uitableviewcell
-class StudentCell: UITableViewCell {
-    private let profileImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 20
-        imageView.layer.masksToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-
-    let nameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    let ageLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    let scoreLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    let scholarshipLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-
-    let scholarshipIndicator: UIView = {
-        let view = UIView()
-        view.layer.cornerRadius = 5
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupLayout()
+class BreedsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    private let tableView = UITableView()
+    private let viewModel = BreedsViewModel()
+    private let spinnerView = CustomSpinnerView()
+    private var cancellables = Set<AnyCancellable>()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "Cat Breeds"
+        view.backgroundColor = .white
+        
+        setupTableView()
+        bindViewModel()
+        
+        viewModel.loadBreeds()
     }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    private func setupLayout() {
-        contentView.addSubview(profileImageView)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(ageLabel)
-        contentView.addSubview(scoreLabel)
-        contentView.addSubview(scholarshipLabel)
-        contentView.addSubview(scholarshipIndicator)
-
-// https://www.hackingwithswift.com/example-code/uikit/how-to-activate-multiple-auto-layout-constraints-using-activate
+    
+    private func setupTableView() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "BreedCell")
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(tableView)
+        
         NSLayoutConstraint.activate([
-            profileImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            profileImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            profileImageView.widthAnchor.constraint(equalToConstant: 40),
-            profileImageView.heightAnchor.constraint(equalToConstant: 40),
-
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
-            nameLabel.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 10),
-
-            ageLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 5),
-            ageLabel.leadingAnchor.constraint(equalTo: profileImageView.trailingAnchor, constant: 10),
-
-            scoreLabel.centerYAnchor.constraint(equalTo: ageLabel.centerYAnchor),
-            scoreLabel.leadingAnchor.constraint(equalTo: ageLabel.trailingAnchor, constant: 20),
-
-            scholarshipLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
-            scholarshipLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 60),
-
-            scholarshipIndicator.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -13),
-            scholarshipIndicator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor, constant: -55),
-            scholarshipIndicator.widthAnchor.constraint(equalToConstant: 10),
-            scholarshipIndicator.heightAnchor.constraint(equalToConstant: 10)
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
         ])
     }
-
-    func configure(with student: Student, _ profilePicture: String) {
-        profileImageView.image = UIImage(named: profilePicture)
-
-        nameLabel.text = student.name
-        ageLabel.text = "Age: \(student.age ?? 0)"
-        scoreLabel.text = "Score: \(student.average())"
-        scholarshipLabel.text = "Shoolarship: "
-        scholarshipIndicator.backgroundColor = student.hasScholarship == true ? .green : .red
+    
+    private func bindViewModel() {
+        spinnerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(spinnerView)
+        
+        NSLayoutConstraint.activate([
+            spinnerView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            spinnerView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        
+        viewModel.$breeds
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
+        
+        viewModel.$breedImages
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
+            }
+            .store(in: &cancellables)
+        viewModel.$isLoading
+                    .sink { [weak self] isLoading in
+                        if isLoading {
+                            self?.spinnerView.startAnimating()
+                            self?.tableView.isHidden = true
+                        } else {
+                            self?.spinnerView.stopAnimating()
+                            self?.tableView.isHidden = false
+                        }
+                    }
+                    .store(in: &cancellables)
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.breeds.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "BreedCell", for: indexPath)
+        
+        let breed = viewModel.breeds[indexPath.row]
+        cell.textLabel?.text = breed.name
+        cell.imageView?.image = viewModel.breedImages[breed.id] ?? UIImage(systemName: "photo")
+        
+        return cell
     }
 }

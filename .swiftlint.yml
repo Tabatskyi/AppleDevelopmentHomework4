@@ -1,0 +1,13 @@
+disabled_rules:
+  - trailing_whitespace
+  - identifier_name
+line_length:
+  warning: 140
+  ignores_function_declarations: true
+  ignores_comments: true
+  ignores_interpolated_strings: true
+  ignores_urls: true
+included:
+  - Homework4 # Paths to include in the linting
+  - Homework4Tests
+  - Homework4UITests

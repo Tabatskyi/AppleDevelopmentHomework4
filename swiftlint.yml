@@ -1,4 +1,0 @@
-disabled_rules:
-  - trailing_whitespace
-included:
-  - Homework3 # Paths to include in the linting
