@@ -22,6 +22,7 @@
 		CEBCD8192CE3661A0051C817 /* CustomTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8162CE3661A0051C817 /* CustomTable.swift */; };
 		CEBCD81E2CE366B00051C817 /* CatinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD81D2CE366B00051C817 /* CatinderTests.swift */; };
 		CEBCD8262CE36C350051C817 /* CatLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8252CE36C350051C817 /* CatLoading.swift */; };
+		CEBCD83C2CE4C47E0051C817 /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD83B2CE4C47E0051C817 /* CatViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -76,6 +77,7 @@
 		CEBCD8162CE3661A0051C817 /* CustomTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTable.swift; sourceTree = "<group>"; };
 		CEBCD81D2CE366B00051C817 /* CatinderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatinderTests.swift; sourceTree = "<group>"; };
 		CEBCD8252CE36C350051C817 /* CatLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatLoading.swift; sourceTree = "<group>"; };
+		CEBCD83B2CE4C47E0051C817 /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				CEBCD8092CE35F750051C817 /* CatAPIService.swift */,
 				CEBCD80A2CE35F750051C817 /* CatModels.swift */,
 				CEBCD8252CE36C350051C817 /* CatLoading.swift */,
+				CEBCD83B2CE4C47E0051C817 /* CatViewModel.swift */,
 			);
 			path = Homework4;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				CEBCD80D2CE35F750051C817 /* CatModels.swift in Sources */,
 				CEBCD8182CE3661A0051C817 /* StudentDetails.swift in Sources */,
 				CEBCD7C42CE35CE50051C817 /* ViewController.swift in Sources */,
+				CEBCD83C2CE4C47E0051C817 /* CatViewModel.swift in Sources */,
 				CEBCD80C2CE35F750051C817 /* CatAPIService.swift in Sources */,
 				CEBCD8172CE3661A0051C817 /* Students.swift in Sources */,
 				CEBCD7C02CE35CE50051C817 /* AppDelegate.swift in Sources */,

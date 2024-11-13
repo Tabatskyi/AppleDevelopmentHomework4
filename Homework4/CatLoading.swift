@@ -1,44 +1,40 @@
 import UIKit
-
+// https://www.hackingwithswift.com/example-code/uikit/how-to-use-uiactivityindicatorview-to-show-a-spinner-when-work-is-happening
+// https://developer.apple.com/documentation/uikit/uiactivityindicatorview
 class CustomSpinnerView: UIView {
-
-    private let spinnerLayer = CAShapeLayer()
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupSpinner()
-        startAnimating()
+    
+    private let activityIndicator: UIActivityIndicatorView
+    
+    init(style: UIActivityIndicatorView.Style = .large) {
+        self.activityIndicator = UIActivityIndicatorView(style: style)
+        super.init(frame: .zero)
+        setupView()
     }
-
+    
     required init?(coder: NSCoder) {
+        self.activityIndicator = UIActivityIndicatorView(style: .large)
         super.init(coder: coder)
-        setupSpinner()
-        startAnimating()
+        setupView()
     }
-
-    private func setupSpinner() {
-        let radius: CGFloat = 25
-        let center = CGPoint(x: bounds.midX, y: bounds.midY)
-        let circularPath = UIBezierPath(arcCenter: center,
-                                        radius: radius,
-                                        startAngle: 0,
-                                        endAngle: 2 * .pi,
-                                        clockwise: true)
-
-        spinnerLayer.path = circularPath.cgPath
-        spinnerLayer.strokeColor = UIColor.gray.cgColor
-        spinnerLayer.lineWidth = 4
-        spinnerLayer.fillColor = UIColor.clear.cgColor
-        spinnerLayer.lineCap = .round
-        layer.addSublayer(spinnerLayer)
+    
+    private func setupView() {
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(activityIndicator)
+        NSLayoutConstraint.activate([
+            activityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
     }
-
-    private func startAnimating() {
-        let rotation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotation.toValue = NSNumber(value: 2 * Double.pi)
-        rotation.duration = 1
-        rotation.isCumulative = true
-        rotation.repeatCount = .infinity
-        layer.add(rotation, forKey: "rotationAnimation")
+    
+    func startAnimating() {
+        activityIndicator.startAnimating()
+        isHidden = false
+    }
+    
+    func stopAnimating() {
+        activityIndicator.stopAnimating()
+        isHidden = true
     }
 }

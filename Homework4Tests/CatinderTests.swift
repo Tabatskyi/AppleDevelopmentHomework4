@@ -7,7 +7,7 @@
 
 import XCTest
 import Combine
-@testable import Catinder
+@testable import Homework4
 
 final class CatinderTests: XCTestCase {
     
@@ -93,7 +93,7 @@ final class CatinderTests: XCTestCase {
             .flatMap { [weak self] cats in
                 Publishers.MergeMany(
                     cats.compactMap { cat -> AnyPublisher<(Cat, UIImage?), Error> in
-                        guard let self, let url = URL(string: cat.url) else {
+                        guard let self = self, let url = URL(string: cat.url) else {
                             return Just((cat, nil))
                                 .setFailureType(to: Error.self)
                                 .eraseToAnyPublisher()
