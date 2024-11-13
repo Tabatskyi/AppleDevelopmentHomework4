@@ -16,7 +16,8 @@ class LikedViewController: UIViewController, UITableViewDataSource, UITableViewD
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "LikedImageCell")
+        tableView.register(LikedImageCell.self, forCellReuseIdentifier: "LikedImageCell")
+        tableView.rowHeight = 200 
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
@@ -38,9 +39,45 @@ class LikedViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LikedImageCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "LikedImageCell", for: indexPath) as? LikedImageCell else {
+            return UITableViewCell()
+        }
         let image = likedImages[indexPath.row]
-        cell.imageView?.image = image
+        cell.configure(with: image)
         return cell
+    }
+}
+
+class LikedImageCell: UITableViewCell {
+    
+    let likedImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupLayout()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupLayout() {
+        contentView.addSubview(likedImageView)
+        NSLayoutConstraint.activate([
+            likedImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            likedImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
+            likedImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            likedImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
+        ])
+    }
+    
+    func configure(with image: UIImage) {
+        likedImageView.image = image
     }
 }

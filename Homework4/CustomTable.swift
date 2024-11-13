@@ -24,7 +24,7 @@ class BreedsViewController: UIViewController, UITableViewDataSource, UITableView
     private func setupTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "BreedCell")
+        tableView.register(BreedsTableCell.self, forCellReuseIdentifier: "BreedCell")
         tableView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(tableView)
         
@@ -56,6 +56,7 @@ class BreedsViewController: UIViewController, UITableViewDataSource, UITableView
                 self?.tableView.reloadData()
             }
             .store(in: &cancellables)
+        
         viewModel.$isLoading
             .sink { [weak self] isLoading in
                 if isLoading {
@@ -69,18 +70,69 @@ class BreedsViewController: UIViewController, UITableViewDataSource, UITableView
             }
             .store(in: &cancellables)
     }
-    
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.breeds.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BreedCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BreedCell", for: indexPath) as? BreedsTableCell else {
+            return UITableViewCell()
+        }
         
         let breed = viewModel.breeds[indexPath.row]
-        cell.textLabel?.text = breed.name
-        cell.imageView?.image = viewModel.breedImages[breed.id] ?? UIImage(systemName: "photo")
+        let breedImage = viewModel.breedImages[breed.id] ?? UIImage(systemName: "photo")!
+        
+        cell.configure(with: breed, breedImage)
         
         return cell
+    }
+}
+
+class BreedsTableCell: UITableViewCell {
+    private let breedImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.cornerRadius = 20
+        imageView.layer.masksToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+
+    let breedLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        setupLayout()
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    private func setupLayout() {
+        contentView.addSubview(breedImageView)
+        contentView.addSubview(breedLabel)
+
+        // https://www.hackingwithswift.com/example-code/uikit/how-to-activate-multiple-auto-layout-constraints-using-activate
+        NSLayoutConstraint.activate([
+            breedImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
+            breedImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
+            breedImageView.widthAnchor.constraint(equalToConstant: 40),
+            breedImageView.heightAnchor.constraint(equalToConstant: 40),
+
+            breedLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            breedLabel.leadingAnchor.constraint(equalTo: breedImageView.trailingAnchor, constant: 10)
+        ])
+    }
+
+    func configure(with breed: Breed, _ image: UIImage) {
+        breedImageView.image = image
+        breedLabel.text = breed.name
     }
 }

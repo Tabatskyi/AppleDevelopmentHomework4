@@ -133,6 +133,8 @@ class ViewController: UIViewController {
                 self.imageView.transform = CGAffineTransform(translationX: translationX, y: 0)
             }, completion: { [weak self] _ in
                 self?.imageView.transform = .identity
+                self?.spinnerView.startAnimating()
+                self?.imageView.isHidden = true
                 self?.viewModel.fetchCatImage()
             }
         )
