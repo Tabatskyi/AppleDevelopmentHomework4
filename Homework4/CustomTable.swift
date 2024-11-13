@@ -57,16 +57,17 @@ class BreedsViewController: UIViewController, UITableViewDataSource, UITableView
             }
             .store(in: &cancellables)
         viewModel.$isLoading
-                    .sink { [weak self] isLoading in
-                        if isLoading {
-                            self?.spinnerView.startAnimating()
-                            self?.tableView.isHidden = true
-                        } else {
-                            self?.spinnerView.stopAnimating()
-                            self?.tableView.isHidden = false
-                        }
-                    }
-                    .store(in: &cancellables)
+            .sink { [weak self] isLoading in
+                if isLoading {
+                    self?.spinnerView.startAnimating()
+                    self?.tableView.isHidden = true
+                } else {
+                    self?.spinnerView.stopAnimating()
+                    self?.tableView.reloadData()
+                    self?.tableView.isHidden = false
+                }
+            }
+            .store(in: &cancellables)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

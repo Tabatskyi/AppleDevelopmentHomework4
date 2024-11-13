@@ -63,7 +63,7 @@ class ViewController: UIViewController {
         likeButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(likeButton)
         
-        dislikeButton.setTitle("💔", for: .normal)
+        dislikeButton.setTitle("❌", for: .normal)
         dislikeButton.addTarget(self, action: #selector(dislikeButtonTapped), for: .touchUpInside)
         dislikeButton.titleLabel?.font = UIFont.systemFont(ofSize: 50)
         dislikeButton.translatesAutoresizingMaskIntoConstraints = false
@@ -107,6 +107,10 @@ class ViewController: UIViewController {
     @objc private func likeButtonTapped() {
         viewModel.likeCat()
         animateImageOffScreen(direction: .right)
+        if let currentImage = imageView.image,
+           let likedVC = (tabBarController?.viewControllers?[2] as? UINavigationController)?.topViewController as? LikedViewController {
+            likedVC.addLikedImage(currentImage)
+        }
     }
     
     @objc private func dislikeButtonTapped() {

@@ -14,8 +14,7 @@ class BreedsViewModel {
         
         catAPIService.fetchCatBreeds()
             .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { [weak self] completion in
-                self?.isLoading = false
+            .sink(receiveCompletion: { completion in
                 if case .failure(let error) = completion {
                     print("Failed to fetch breeds: \(error)")
                 }

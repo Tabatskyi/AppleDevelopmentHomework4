@@ -22,6 +22,7 @@
 		CEBCD8262CE36C350051C817 /* CatLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8252CE36C350051C817 /* CatLoading.swift */; };
 		CEBCD83C2CE4C47E0051C817 /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD83B2CE4C47E0051C817 /* CatViewModel.swift */; };
 		CEBCD8572CE4F89B0051C817 /* BreedsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8562CE4F89B0051C817 /* BreedsViewModel.swift */; };
+		CEBCD85C2CE502710051C817 /* LikedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD85B2CE502710051C817 /* LikedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -76,6 +77,7 @@
 		CEBCD8252CE36C350051C817 /* CatLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatLoading.swift; sourceTree = "<group>"; };
 		CEBCD83B2CE4C47E0051C817 /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
 		CEBCD8562CE4F89B0051C817 /* BreedsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsViewModel.swift; sourceTree = "<group>"; };
+		CEBCD85B2CE502710051C817 /* LikedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				CEBCD8252CE36C350051C817 /* CatLoading.swift */,
 				CEBCD83B2CE4C47E0051C817 /* CatViewModel.swift */,
 				CEBCD8562CE4F89B0051C817 /* BreedsViewModel.swift */,
+				CEBCD85B2CE502710051C817 /* LikedViewController.swift */,
 			);
 			path = Homework4;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				CEBCD7C42CE35CE50051C817 /* ViewController.swift in Sources */,
 				CEBCD83C2CE4C47E0051C817 /* CatViewModel.swift in Sources */,
 				CEBCD80C2CE35F750051C817 /* CatAPIService.swift in Sources */,
+				CEBCD85C2CE502710051C817 /* LikedViewController.swift in Sources */,
 				CEBCD7C02CE35CE50051C817 /* AppDelegate.swift in Sources */,
 				CEBCD8262CE36C350051C817 /* CatLoading.swift in Sources */,
 				CEBCD7C22CE35CE50051C817 /* SceneDelegate.swift in Sources */,
