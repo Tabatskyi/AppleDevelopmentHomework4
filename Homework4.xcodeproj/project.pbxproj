@@ -12,8 +12,6 @@
 		CEBCD7C42CE35CE50051C817 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD7C32CE35CE50051C817 /* ViewController.swift */; };
 		CEBCD7C92CE35CE70051C817 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEBCD7C82CE35CE70051C817 /* Assets.xcassets */; };
 		CEBCD7CC2CE35CE70051C817 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEBCD7CA2CE35CE70051C817 /* LaunchScreen.storyboard */; };
-		CEBCD7D72CE35CE80051C817 /* Homework4Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD7D62CE35CE80051C817 /* Homework4Tests.swift */; };
-		CEBCD7E22CE35CE80051C817 /* Homework4UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD7E12CE35CE80051C817 /* Homework4UITests.swift */; };
 		CEBCD7F72CE35E3A0051C817 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CEBCD7F62CE35E3A0051C817 /* SnapKit */; };
 		CEBCD80C2CE35F750051C817 /* CatAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD8092CE35F750051C817 /* CatAPIService.swift */; };
 		CEBCD80D2CE35F750051C817 /* CatModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBCD80A2CE35F750051C817 /* CatModels.swift */; };
@@ -47,13 +45,6 @@
 			remoteGlobalIDString = CEBCD7BB2CE35CE40051C817;
 			remoteInfo = Homework4;
 		};
-		CEBCD7DE2CE35CE80051C817 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CEBCD7B42CE35CE40051C817 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CEBCD7BB2CE35CE40051C817;
-			remoteInfo = Homework4;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -65,11 +56,7 @@
 		CEBCD7CB2CE35CE70051C817 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEBCD7CD2CE35CE70051C817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEBCD7D22CE35CE80051C817 /* Homework4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Homework4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEBCD7D62CE35CE80051C817 /* Homework4Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework4Tests.swift; sourceTree = "<group>"; };
 		CEBCD7D82CE35CE80051C817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEBCD7DD2CE35CE80051C817 /* Homework4UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Homework4UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEBCD7E12CE35CE80051C817 /* Homework4UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework4UITests.swift; sourceTree = "<group>"; };
-		CEBCD7E32CE35CE80051C817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEBCD8092CE35F750051C817 /* CatAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatAPIService.swift; sourceTree = "<group>"; };
 		CEBCD80A2CE35F750051C817 /* CatModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatModels.swift; sourceTree = "<group>"; };
 		CEBCD8162CE3661A0051C817 /* CustomTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTable.swift; sourceTree = "<group>"; };
@@ -96,13 +83,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CEBCD7DA2CE35CE80051C817 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -111,7 +91,6 @@
 			children = (
 				CEBCD7BE2CE35CE50051C817 /* Homework4 */,
 				CEBCD7D52CE35CE80051C817 /* Homework4Tests */,
-				CEBCD7E02CE35CE80051C817 /* Homework4UITests */,
 				CEBCD7BD2CE35CE50051C817 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,7 +100,6 @@
 			children = (
 				CEBCD7BC2CE35CE50051C817 /* Homework4.app */,
 				CEBCD7D22CE35CE80051C817 /* Homework4Tests.xctest */,
-				CEBCD7DD2CE35CE80051C817 /* Homework4UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -149,20 +127,10 @@
 		CEBCD7D52CE35CE80051C817 /* Homework4Tests */ = {
 			isa = PBXGroup;
 			children = (
-				CEBCD7D62CE35CE80051C817 /* Homework4Tests.swift */,
 				CEBCD81D2CE366B00051C817 /* CatinderTests.swift */,
 				CEBCD7D82CE35CE80051C817 /* Info.plist */,
 			);
 			path = Homework4Tests;
-			sourceTree = "<group>";
-		};
-		CEBCD7E02CE35CE80051C817 /* Homework4UITests */ = {
-			isa = PBXGroup;
-			children = (
-				CEBCD7E12CE35CE80051C817 /* Homework4UITests.swift */,
-				CEBCD7E32CE35CE80051C817 /* Info.plist */,
-			);
-			path = Homework4UITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,24 +176,6 @@
 			productReference = CEBCD7D22CE35CE80051C817 /* Homework4Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		CEBCD7DC2CE35CE80051C817 /* Homework4UITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CEBCD7EC2CE35CE80051C817 /* Build configuration list for PBXNativeTarget "Homework4UITests" */;
-			buildPhases = (
-				CEBCD7D92CE35CE80051C817 /* Sources */,
-				CEBCD7DA2CE35CE80051C817 /* Frameworks */,
-				CEBCD7DB2CE35CE80051C817 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CEBCD7DF2CE35CE80051C817 /* PBXTargetDependency */,
-			);
-			name = Homework4UITests;
-			productName = Homework4UITests;
-			productReference = CEBCD7DD2CE35CE80051C817 /* Homework4UITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -239,10 +189,6 @@
 						CreatedOnToolsVersion = 12.4;
 					};
 					CEBCD7D12CE35CE80051C817 = {
-						CreatedOnToolsVersion = 12.4;
-						TestTargetID = CEBCD7BB2CE35CE40051C817;
-					};
-					CEBCD7DC2CE35CE80051C817 = {
 						CreatedOnToolsVersion = 12.4;
 						TestTargetID = CEBCD7BB2CE35CE40051C817;
 					};
@@ -266,7 +212,6 @@
 			targets = (
 				CEBCD7BB2CE35CE40051C817 /* Homework4 */,
 				CEBCD7D12CE35CE80051C817 /* Homework4Tests */,
-				CEBCD7DC2CE35CE80051C817 /* Homework4UITests */,
 			);
 		};
 /* End PBXProject section */
@@ -282,13 +227,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		CEBCD7D02CE35CE80051C817 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CEBCD7DB2CE35CE80051C817 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -342,16 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEBCD7D72CE35CE80051C817 /* Homework4Tests.swift in Sources */,
 				CEBCD81E2CE366B00051C817 /* CatinderTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CEBCD7D92CE35CE80051C817 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CEBCD7E22CE35CE80051C817 /* Homework4UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,11 +291,6 @@
 			isa = PBXTargetDependency;
 			target = CEBCD7BB2CE35CE40051C817 /* Homework4 */;
 			targetProxy = CEBCD7D32CE35CE80051C817 /* PBXContainerItemProxy */;
-		};
-		CEBCD7DF2CE35CE80051C817 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CEBCD7BB2CE35CE40051C817 /* Homework4 */;
-			targetProxy = CEBCD7DE2CE35CE80051C817 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -576,44 +500,6 @@
 			};
 			name = Release;
 		};
-		CEBCD7ED2CE35CE80051C817 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Homework4UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = KSE.AppleDevelopment.Homework4UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Homework4;
-			};
-			name = Debug;
-		};
-		CEBCD7EE2CE35CE80051C817 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Homework4UITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = KSE.AppleDevelopment.Homework4UITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = Homework4;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -640,15 +526,6 @@
 			buildConfigurations = (
 				CEBCD7EA2CE35CE80051C817 /* Debug */,
 				CEBCD7EB2CE35CE80051C817 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CEBCD7EC2CE35CE80051C817 /* Build configuration list for PBXNativeTarget "Homework4UITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CEBCD7ED2CE35CE80051C817 /* Debug */,
-				CEBCD7EE2CE35CE80051C817 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
